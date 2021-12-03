@@ -1,0 +1,47 @@
+# DEBUG: level for debugging purposes in development.
+# INFO: level when something interesting—but expected—happens.
+# WARNING: level when something unexpected or unusual happens. It’s not an error, but you should pay attention to it.
+# ERROR: level is for things that go wrong but are usually recoverable (e.g., internal exceptions you can handle or APIs returning error results).
+# CRITICAL: level in a doomsday scenario. The application is unusable. At this level, someone should be woken up at 2 a.m :( 
+
+---
+version: 1
+disable_existing_loggers: False
+formatters:
+  simple:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+
+  info_file_handler:
+    class: logging.handlers.RotatingFileHandler
+    level: INFO
+    formatter: simple
+    filename: info.log
+    maxBytes: 10485760 # 10MB
+    backupCount: 20
+    encoding: utf8
+
+  error_file_handler:
+    class: logging.handlers.RotatingFileHandler
+    level: ERROR
+    formatter: simple
+    filename: errors.log
+    maxBytes: 10485760 # 10MB
+    backupCount: 20
+    encoding: utf8
+
+loggers:
+  debuger:
+    level: DEBUG
+    handlers: [console]
+    propagate: False
+
+root:
+  level: INFO
+  handlers: [info_file_handler, error_file_handler]
