@@ -1,0 +1,12 @@
+fail_fast: false
+repos:
+- repo: local
+  hooks:
+  - id: black
+    name: black
+    language: system
+    entry: black
+  - id: flake8
+    name: flake8
+    language: system
+    entry: flake8
