@@ -1,6 +1,27 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+"""
+install: pip install flake8 / pip install flake8-colors / 
+HTML: flake8 testflake8.py --format=html --htmldir=flake-report
+usage: flake8 / flake8 bootcamp/feeds/
+Configuring: setup.cfg / https://flake8.pycqa 
+dqsdqsdqdqdsqdsdqdqdsfsdfsdfsdffsdfsdfsdffdsdff
+
+
+
+[flake8]
+exclude = .git,*migrations*
+max-line-length = 119 
+
+
+// PRE COMMIT
+
+pip install pre-commit
+pre-commit install # dans le projet
+SKIP=flake8 git commit -m "foo"
+"""
+
 import os
 import logging.config
 import yaml
