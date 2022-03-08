@@ -3,3 +3,8 @@
 
 # DESIGN PATTERN
 https://refactoring.guru/fr/design-patterns/abstract-factory/python/example
+
+# CLI
+https://typer.tiangolo.com/
+
+
