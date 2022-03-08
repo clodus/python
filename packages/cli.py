@@ -85,7 +85,7 @@ def main(
 
 def main():
     typer.echo("Opening Typer's docs")
-    typer.launch("https://data4sec.fr.world.socgen/")
+    typer.launch("https://google.fr/")
 
 if __name__ == "__main__":
     typer.run(main)
